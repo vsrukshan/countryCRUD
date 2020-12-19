@@ -35,7 +35,7 @@ public class CountryController {
         return optionalCountry.get();
     }
 
-    @PostMapping()
+    @PostMapping
     public Country add(@RequestBody Country country) {
         countryDao.save(country);
         return country;
