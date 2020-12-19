@@ -14,6 +14,12 @@ repositories {
 
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'org.springframework.boot:spring-boot-starter-data-rest:2.3.1.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa:2.3.1.RELEASE'
+	implementation 'org.springframework.boot:spring-boot-starter-validation:2.3.1.RELEASE'
+	implementation 'com.fasterxml.jackson.dataformat:jackson-dataformat-xml:2.11.0'
+	implementation group: 'org.springframework.boot', name: 'spring-boot-starter-jdbc', version: '2.4.0'
+	runtimeOnly group: 'com.h2database', name: 'h2', version: '1.4.200'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
