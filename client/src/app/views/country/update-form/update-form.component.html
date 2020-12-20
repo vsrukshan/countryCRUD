@@ -1,0 +1,55 @@
+<div fxLayoutAlign="center" >
+  <mat-card class="example-card" fxFlex="60" align="center">
+    <form [formGroup]="countryUpdateForm" >
+      <mat-card-header>
+        <mat-card-title>Country Update Form</mat-card-title>
+      </mat-card-header>
+      <mat-card-content>
+
+        <p>
+          <mat-form-field appearance="standard" class="full-width">
+            <mat-label>Name of the Country</mat-label>
+            <input formControlName="name" matInput placeholder="Ex: Sri Lanka" [(ngModel)]="country.name">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+        <p>
+          <mat-form-field appearance="standard" class="full-width">
+            <mat-label>Continent</mat-label>
+            <input formControlName="continent" matInput placeholder="Ex: Asia" [(ngModel)]="country.continent">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="standard" class="full-width">
+            <mat-label>Main Language</mat-label>
+            <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala" [(ngModel)]="country.mainLanguage">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="standard" class="full-width">
+            <mat-label>Population</mat-label>
+            <input formControlName="population" matInput placeholder="Ex: 2000000" [(ngModel)]="country.population">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+
+        <p>
+          <mat-form-field appearance="standard" class="full-width">
+            <mat-label>Currency</mat-label>
+            <input formControlName="currencyCode" matInput placeholder="Ex: LKR" [(ngModel)]="country.currencyCode">
+            <mat-hint>Hint</mat-hint>
+          </mat-form-field>
+        </p>
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button (click)="onSubmit()" [disabled]="!countryUpdateForm.valid" mat-raised-button color="primary">Submit</button>
+        <button mat-stroked-button color="warn">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>
+</div>
