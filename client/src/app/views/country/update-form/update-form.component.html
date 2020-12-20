@@ -12,7 +12,7 @@
             <label>
               <input formControlName="name" matInput placeholder="Ex: Sri Lanka" [(ngModel)]="country.name">
             </label>
-            <mat-error *ngIf="name.invalid && name.touched">This value is required</mat-error>
+            <mat-error *ngIf="name.invalid && name.touched">This value is required and enter only letters</mat-error>
           </mat-form-field>
         </p>
         <p>
@@ -21,7 +21,8 @@
             <label>
               <input formControlName="continent" matInput placeholder="Ex: Asia" [(ngModel)]="country.continent">
             </label>
-            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
+            <mat-error *ngIf="continent.invalid && continent.touched">This value is required and enter only letters
+            </mat-error>
           </mat-form-field>
         </p>
 
@@ -31,7 +32,7 @@
             <label>
               <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala" [(ngModel)]="country.mainLanguage">
             </label>
-            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required and enter only letters</mat-error>
           </mat-form-field>
         </p>
 

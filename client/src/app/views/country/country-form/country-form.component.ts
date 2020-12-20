@@ -12,11 +12,11 @@ export class CountryFormComponent implements OnInit {
 
   countryForm = new FormGroup(
     {
-      name: new FormControl('', [Validators.required]),
-      continent: new FormControl('', [Validators.required]),
-      mainLanguage: new FormControl('', [Validators.required]),
-      currencyCode: new FormControl('', [Validators.required]),
-      population: new FormControl('', [Validators.required, Validators.max(2147483647), Validators.pattern('^[0-9]*$')]),
+      name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      continent: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      mainLanguage: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      currencyCode: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      population: new FormControl('', [Validators.required, Validators.max(2147483647), Validators.pattern(/^[0-9]*$/)]),
 
     }
   );
@@ -44,8 +44,12 @@ export class CountryFormComponent implements OnInit {
 
   onSubmit(): void {
     // console.log(this.countryForm.value);
-    this.countryService.add(this.countryForm.value).subscribe(() => {
-      console.log('success');
+    this.countryService.add(this.countryForm.value).subscribe(
+      (response) => {
+      window.alert(`Country "${response.name}" added successfully `),
+        (error) => {
+        window.alert(`operation failed ${error}`);
+        };
     });
     this.formReset();
   }

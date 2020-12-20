@@ -12,8 +12,7 @@
             <label>
               <input formControlName="name" matInput placeholder="Ex: Sri Lanka">
             </label>
-<!--            <mat-error *ngIf="name.errors.required && name.touched">This value is required</mat-error>-->
-            <mat-error *ngIf="name.errors.pattern && name.touched">Enter only letters</mat-error>
+            <mat-error *ngIf="name.invalid && name.touched">This value is required and enter only letters</mat-error>
           </mat-form-field>
         </p>
         <p>
@@ -22,8 +21,8 @@
             <label>
               <input formControlName="continent" matInput placeholder="Ex: Asia">
             </label>
-<!--            <mat-error *ngIf="continent.errors.required && continent.touched">This value is required</mat-error>-->
-            <mat-error *ngIf="continent.errors.pattern && continent.touched">Enter only letters</mat-error>
+            <mat-error *ngIf="continent.invalid && continent.touched">This value is required and enter only letters
+            </mat-error>
           </mat-form-field>
         </p>
 
@@ -33,8 +32,7 @@
             <label>
               <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala">
             </label>
-<!--            <mat-error *ngIf="mainLanguage.errors.required && mainLanguage.touched">This value is required</mat-error>-->
-            <mat-error *ngIf="mainLanguage.errors.pattern && mainLanguage.touched">Enter only letters</mat-error>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required and enter only letters</mat-error>
           </mat-form-field>
         </p>
 
@@ -45,8 +43,7 @@
               <input formControlName="population" matInput placeholder="Ex: 2000000">
             </label>
             <mat-hint >Max value is 2147483647</mat-hint>
-<!--            <mat-error *ngIf="population.errors.maxlength && population.touched">You exeeded the maximum value</mat-error>-->
-            <mat-error *ngIf="population.errors.pattern && population.touched">Enter only numbers</mat-error>
+            <mat-error *ngIf="population.invalid && population.touched">You exeeded the maximum value</mat-error>
           </mat-form-field>
         </p>
 
@@ -57,7 +54,6 @@
               <input  #input maxlength="3" minlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR">
             </label>
             <mat-hint>{{input.value?.length || 0}}/3</mat-hint>
-            <mat-error *ngIf="currencyCode.errors.pattern && currencyCode.touched">Enter only letters</mat-error>
           </mat-form-field>
         </p>
 

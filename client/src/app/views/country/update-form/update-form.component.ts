@@ -17,11 +17,11 @@ export class UpdateFormComponent implements OnInit {
 
   countryUpdateForm = new FormGroup(
     {
-      name: new FormControl('', [Validators.required]),
-      continent: new FormControl('', [Validators.required]),
-      mainLanguage: new FormControl('', [Validators.required]),
-      currencyCode: new FormControl('', [Validators.required]),
-      population: new FormControl('', [Validators.required, Validators.max(2147483647)]),
+      name: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      continent: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      mainLanguage: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      currencyCode: new FormControl('', [Validators.required, Validators.pattern(/^[a-zA-Z\s]*$/)]),
+      population: new FormControl('', [Validators.required, Validators.max(2147483647), Validators.pattern(/^[0-9]*$/)]),
 
     }
   );
