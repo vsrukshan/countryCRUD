@@ -1,4 +1,4 @@
 **countryCRUD**
 
 Simple crud application for country details. In detail view mapbox map also included.
-![image](https://user-images.githubusercontent.com/58530170/102725395-6ebe5c00-433c-11eb-8350-1ef49b57b950.png)
+![image](https://user-images.githubusercontent.com/58530170/102725535-6581bf00-433d-11eb-820a-5f130a831799.png)
