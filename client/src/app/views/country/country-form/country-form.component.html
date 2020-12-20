@@ -10,14 +10,14 @@
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Name of the Country</mat-label>
             <input formControlName="name" matInput placeholder="Ex: Sri Lanka">
-            <mat-hint>Hint</mat-hint>
+            <mat-error *ngIf="name.invalid && name.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Continent</mat-label>
             <input formControlName="continent" matInput placeholder="Ex: Asia">
-            <mat-hint>Hint</mat-hint>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
 
@@ -25,7 +25,7 @@
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Main Language</mat-label>
             <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala">
-            <mat-hint>Hint</mat-hint>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
 
@@ -34,14 +34,14 @@
             <mat-label>Population</mat-label>
             <input formControlName="population" matInput placeholder="Ex: 2000000">
             <mat-hint >Max value is 2147483647</mat-hint>
-<!--            <mat-error *ngIf="population.invalid">{{getErrorMessage()}}</mat-error>-->
+            <mat-error *ngIf="population.invalid && population.touched">You exeeded the maximum value</mat-error>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Currency</mat-label>
-            <input  #input maxlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR">
+            <input  #input maxlength="3" minlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR">
             <mat-hint>{{input.value?.length || 0}}/3</mat-hint>
           </mat-form-field>
         </p>

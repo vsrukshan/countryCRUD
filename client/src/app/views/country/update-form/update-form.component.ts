@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import {FormControl, FormGroup, Validators} from '@angular/forms';
+import {AbstractControl, FormControl, FormGroup, Validators} from '@angular/forms';
 import {CountryService} from '../../../services/country.service';
 import {ActivatedRoute, Router} from '@angular/router';
 import {Country} from '../../../entities/country';
@@ -29,6 +29,22 @@ export class UpdateFormComponent implements OnInit {
 
   constructor(private countryService: CountryService, private router: Router, private route: ActivatedRoute) { }
 
+  get name(): AbstractControl | null {
+    return this.countryUpdateForm.get('name');
+  }
+  get continent(): AbstractControl | null {
+    return this.countryUpdateForm.get('continent');
+  }
+  get mainLanguage(): AbstractControl | null {
+    return this.countryUpdateForm.get('mainLanguage');
+  }
+  get currencyCode(): AbstractControl | null {
+    return this.countryUpdateForm.get('currencyCode');
+  }
+  get population(): AbstractControl | null {
+    return this.countryUpdateForm.get('population');
+  }
+
   loadData(): void {
     this.countryService.get(this.selectedId).subscribe((res) => {
       this.country = res;
@@ -38,7 +54,7 @@ export class UpdateFormComponent implements OnInit {
 
   onSubmit(): void {
     // console.log(this.countryForm.value);
-    this.countryService.update(this.selectedId, this.countryUpdateForm.value).subscribe(data => {
+    this.countryService.update(this.selectedId, this.countryUpdateForm.value).subscribe(() => {
       console.log('success');
     });
     this.formReset();
@@ -46,6 +62,7 @@ export class UpdateFormComponent implements OnInit {
 
   onCancel(): void {
     this.formReset();
+    this.router.navigateByUrl('').then();
   }
 
   formReset(): void {

@@ -9,38 +9,49 @@
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Name of the Country</mat-label>
-            <input formControlName="name" matInput placeholder="Ex: Sri Lanka" [(ngModel)]="country.name">
-            <mat-hint>Hint</mat-hint>
+            <label>
+              <input formControlName="name" matInput placeholder="Ex: Sri Lanka" [(ngModel)]="country.name">
+            </label>
+            <mat-error *ngIf="name.invalid && name.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Continent</mat-label>
-            <input formControlName="continent" matInput placeholder="Ex: Asia" [(ngModel)]="country.continent">
-            <mat-hint>Hint</mat-hint>
+            <label>
+              <input formControlName="continent" matInput placeholder="Ex: Asia" [(ngModel)]="country.continent">
+            </label>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Main Language</mat-label>
-            <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala" [(ngModel)]="country.mainLanguage">
-            <mat-hint>Hint</mat-hint>
+            <label>
+              <input formControlName="mainLanguage" matInput placeholder="Ex: Sinhala" [(ngModel)]="country.mainLanguage">
+            </label>
+            <mat-error *ngIf="mainLanguage.invalid && mainLanguage.touched">This value is required</mat-error>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Population</mat-label>
-            <input  formControlName="population" matInput placeholder="Ex: 2000000" [(ngModel)]="country.population">
+            <label>
+              <input  formControlName="population" matInput placeholder="Ex: 2000000" [(ngModel)]="country.population">
+            </label>
             <mat-hint align="end">Max value is 2147483647</mat-hint>
+            <mat-error *ngIf="population.invalid && population.touched">You exeeded the maximum value</mat-error>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Currency</mat-label>
-            <input #input maxlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR" [(ngModel)]="country.currencyCode">
+            <label>
+              <input #input maxlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR" [(ngModel)]="country.currencyCode">
+            </label>
             <mat-hint>{{input.value?.length || 0}}/3</mat-hint>
           </mat-form-field>
         </p>
