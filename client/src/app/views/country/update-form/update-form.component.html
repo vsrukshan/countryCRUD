@@ -32,16 +32,16 @@
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Population</mat-label>
-            <input formControlName="population" matInput placeholder="Ex: 2000000" [(ngModel)]="country.population">
-            <mat-hint>Hint</mat-hint>
+            <input  formControlName="population" matInput placeholder="Ex: 2000000" [(ngModel)]="country.population">
+            <mat-hint align="end">Max value is 2147483647</mat-hint>
           </mat-form-field>
         </p>
 
         <p>
           <mat-form-field appearance="standard" class="full-width">
             <mat-label>Currency</mat-label>
-            <input formControlName="currencyCode" matInput placeholder="Ex: LKR" [(ngModel)]="country.currencyCode">
-            <mat-hint>Hint</mat-hint>
+            <input #input maxlength="3" formControlName="currencyCode" matInput placeholder="Ex: LKR" [(ngModel)]="country.currencyCode">
+            <mat-hint>{{input.value?.length || 0}}/3</mat-hint>
           </mat-form-field>
         </p>
 

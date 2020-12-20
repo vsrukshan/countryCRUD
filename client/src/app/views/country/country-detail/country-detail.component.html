@@ -1,0 +1,28 @@
+<div fxLayoutAlign="center" class="container">
+  <mat-card class="example-card" fxFlex="60" align="center">
+    <mat-card-header>
+      <mat-card-title class="title">{{country.name}}</mat-card-title>
+    </mat-card-header>  <mat-card-content>
+    <table class="w-100 table-striped custom-data-table">
+      <tbody>
+      <tr>
+        <th>Main Language :</th>
+        <td>{{country.mainLanguage}}</td>
+      </tr>
+      <tr>
+        <th>Continent :</th>
+        <td>{{country.continent}}</td>
+      </tr>
+      <tr>
+        <th>Currency :</th>
+        <td>{{country.currencyCode}}</td>
+      </tr>
+      <tr>
+        <th>Population :</th>
+        <td>{{country.population}}</td>
+      </tr>
+      </tbody>
+    </table>
+  </mat-card-content>
+  </mat-card>
+</div>
