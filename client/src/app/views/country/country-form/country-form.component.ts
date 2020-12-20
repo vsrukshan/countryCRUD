@@ -29,13 +29,16 @@ export class CountryFormComponent implements OnInit {
     this.countryService.add(this.countryForm.value).subscribe(data => {
       console.log('success');
     });
-    this.countryForm.reset();
+    this.formReset();
   }
 
   onCancel(): void {
-    this.countryForm.reset();
+    this.formReset();
   }
 
+  formReset(): void {
+    this.countryForm.reset();
+  }
 
 
   ngOnInit(): void {

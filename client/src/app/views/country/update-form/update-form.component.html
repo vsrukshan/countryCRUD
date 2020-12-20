@@ -48,7 +48,7 @@
       </mat-card-content>
       <mat-card-actions>
         <button (click)="onSubmit()" [disabled]="!countryUpdateForm.valid" mat-raised-button color="primary">Submit</button>
-        <button mat-stroked-button color="warn">Cancel</button>
+        <button (click)="onCancel()" mat-stroked-button color="warn">Cancel</button>
       </mat-card-actions>
     </form>
   </mat-card>

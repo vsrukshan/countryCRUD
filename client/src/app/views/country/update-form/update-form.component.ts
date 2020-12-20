@@ -41,9 +41,16 @@ export class UpdateFormComponent implements OnInit {
     this.countryService.update(this.selectedId, this.countryUpdateForm.value).subscribe(data => {
       console.log('success');
     });
-    this.countryUpdateForm.reset();
+    this.formReset();
   }
 
+  onCancel(): void {
+    this.formReset();
+  }
+
+  formReset(): void {
+    this.countryUpdateForm.reset();
+  }
 
   ngOnInit(): void {
     this.country = new Country();
