@@ -46,6 +46,7 @@ export class UpdateFormComponent implements OnInit {
 
 
   ngOnInit(): void {
+    this.country = new Country();
     this.route.paramMap.subscribe(  (params) => {
       this.selectedId =  + params.get('id');
       this.loadData();

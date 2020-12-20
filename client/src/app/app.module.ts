@@ -11,13 +11,15 @@ import {ReactiveFormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import { CountryTableComponent } from './views/country/country-table/country-table.component';
 import { UpdateFormComponent } from './views/country/update-form/update-form.component';
+import { CountryDetailComponent } from './views/country/country-detail/country-detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CountryFormComponent,
     CountryTableComponent,
-    UpdateFormComponent
+    UpdateFormComponent,
+    CountryDetailComponent
   ],
   imports: [
     BrowserModule,
