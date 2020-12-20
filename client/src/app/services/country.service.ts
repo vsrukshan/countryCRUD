@@ -21,7 +21,7 @@ export class CountryService {
   }
 
   update(id: number, country: Country): any {
-    return this.http.put(`${this.rootUrl}`, country);
+    return this.http.put(`${this.rootUrl}//${id}`, country);
   }
 
   add(country: Country): any {

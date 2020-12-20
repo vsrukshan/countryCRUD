@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import {Country} from '../../../entities/country';
 import {CountryService} from '../../../services/country.service';
 import {Router} from '@angular/router';
+import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
+import {CountryFormComponent} from '../country-form/country-form.component';
+import {UpdateFormComponent} from '../update-form/update-form.component';
 
 @Component({
   selector: 'app-country-table',
@@ -12,7 +15,7 @@ export class CountryTableComponent implements OnInit {
 
   countries: Country[];
 
-  constructor(private counterService: CountryService, private router: Router) { }
+  constructor(private counterService: CountryService, private router: Router, private dialog: MatDialog) { }
 
   displayedColumns: string[] = ['name', 'continent', 'currencyCode', 'mainLanguage', ' '];
 
@@ -31,7 +34,16 @@ export class CountryTableComponent implements OnInit {
   }
 
   onClickAddBtn(): void {
-    this.router.navigateByUrl('/form');
+    this.router.navigateByUrl('/form').then();
+  }
+
+  onClickUpdate(country): void {
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.autoFocus = true;
+    dialogConfig.disableClose = false;
+    dialogConfig.width = '60%';
+
+    this.dialog.open(UpdateFormComponent, dialogConfig);
   }
 
 }
