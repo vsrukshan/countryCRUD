@@ -1,0 +1,28 @@
+.spacer {
+  margin: 30px;
+}
+
+a {
+  text-decoration: none;
+  color: #ffffff;
+  font-size: large;
+}
+
+/* Visited link    */
+a:visited {
+  color:#ffffff;
+}
+
+/* Mouse over link */
+a:hover {
+  color: #ddd7d7;
+}
+
+/* Selected link   */
+a:active {
+  color:#ffffff;
+}
+
+.title {
+  font-size: larger;
+}
