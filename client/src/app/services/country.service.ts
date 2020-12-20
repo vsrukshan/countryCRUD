@@ -28,4 +28,8 @@ export class CountryService {
     return this.http.post(`${this.rootUrl}`, country);
   }
 
+  delete(id: number): any {
+    return this.http.delete(`${this.rootUrl}/${id}`);
+  }
+
 }
