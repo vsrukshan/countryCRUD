@@ -2,9 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {Country} from '../../../entities/country';
 import {CountryService} from '../../../services/country.service';
 import {Router} from '@angular/router';
-import {MatDialog, MatDialogConfig} from '@angular/material/dialog';
-import {CountryFormComponent} from '../country-form/country-form.component';
-import {UpdateFormComponent} from '../update-form/update-form.component';
 
 @Component({
   selector: 'app-country-table',
@@ -15,12 +12,12 @@ export class CountryTableComponent implements OnInit {
 
   countries: Country[];
 
-  constructor(private counterService: CountryService, private router: Router, private dialog: MatDialog) { }
+  constructor(private counterService: CountryService, private router: Router) { }
 
   displayedColumns: string[] = ['name', 'continent', 'currencyCode', 'mainLanguage', ' '];
 
   ngOnInit(): void {
-    this.countries = this.counterService.getAll();
+    this.refreshData();
   }
 
   onclickDelete(country): void {
@@ -37,6 +34,10 @@ export class CountryTableComponent implements OnInit {
     this.router.navigateByUrl('/form').then();
   }
 
-
+  refreshData(): void {
+    this.counterService.getAll().subscribe(res => {
+      this.countries = res;
+    });
+  }
 
 }
