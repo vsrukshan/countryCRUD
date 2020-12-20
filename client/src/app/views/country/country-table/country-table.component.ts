@@ -37,13 +37,6 @@ export class CountryTableComponent implements OnInit {
     this.router.navigateByUrl('/form').then();
   }
 
-  onClickUpdate(country): void {
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.autoFocus = true;
-    dialogConfig.disableClose = false;
-    dialogConfig.width = '60%';
 
-    this.dialog.open(UpdateFormComponent, dialogConfig);
-  }
 
 }
