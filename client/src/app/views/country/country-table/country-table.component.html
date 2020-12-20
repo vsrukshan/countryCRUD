@@ -1,49 +1,49 @@
 <div>
-  <br>
-  <button mat-raised-button color="primary" (click)="onClickAddBtn()">Add New Country</button>
+  <div>
+    <button class="add-btn" mat-raised-button color="primary" (click)="onClickAddBtn()">Add New Country</button>
+  </div>
+  <div class="mt-30 full-width">
+    <table mat-table [dataSource]="countries" class="mat-elevation-z8" >
+
+
+      <ng-container matColumnDef="name">
+        <th mat-header-cell *matHeaderCellDef> Name </th>
+        <td mat-cell *matCellDef="let country"> {{country.name | titlecase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="continent">
+        <th mat-header-cell *matHeaderCellDef> Continent </th>
+        <td mat-cell *matCellDef="let country"> {{country.continent | titlecase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="currencyCode">
+        <th mat-header-cell *matHeaderCellDef> Currency </th>
+        <td mat-cell *matCellDef="let country"> {{country.currencyCode | uppercase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef="mainLanguage">
+        <th mat-header-cell *matHeaderCellDef> Main Language </th>
+        <td mat-cell *matCellDef="let country"> {{country.mainLanguage | titlecase}} </td>
+      </ng-container>
+
+      <ng-container matColumnDef=" ">
+        <th mat-header-cell *matHeaderCellDef>  </th>
+        <td mat-cell *matCellDef="let country">
+          <button class="table-btn" routerLink="country/{{country.id}}" color="primary" mat-icon-button>
+            <mat-icon>info</mat-icon>
+          </button>
+          <button class="table-btn" routerLink="edit/{{country.id}}" color="accent" mat-icon-button>
+            <mat-icon>create_outline</mat-icon>
+          </button>
+          <button class="table-btn" color="warn" mat-icon-button (click)="onclickDelete(country)">
+            <mat-icon>delete_outline</mat-icon>
+          </button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+  </div>
 </div>
-<br>
-<br>
-<div>
-  <table align="center" mat-table [dataSource]="countries" class="mat-elevation-z8">
 
-
-    <ng-container matColumnDef="name">
-      <th mat-header-cell *matHeaderCellDef> Name </th>
-      <td mat-cell *matCellDef="let country"> {{country.name}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="continent">
-      <th mat-header-cell *matHeaderCellDef> Continent </th>
-      <td mat-cell *matCellDef="let country"> {{country.continent}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="currencyCode">
-      <th mat-header-cell *matHeaderCellDef> Currency </th>
-      <td mat-cell *matCellDef="let country"> {{country.currencyCode}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="mainLanguage">
-      <th mat-header-cell *matHeaderCellDef> Main Language </th>
-      <td mat-cell *matCellDef="let country"> {{country.mainLanguage}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef=" ">
-      <th mat-header-cell *matHeaderCellDef>  </th>
-      <td mat-cell *matCellDef="let country">
-        <button routerLink="country/{{country.id}}" color="primary" mat-icon-button>
-          <mat-icon>info</mat-icon>
-        </button>
-        <button routerLink="edit/{{country.id}}" color="accent" mat-icon-button>
-          <mat-icon>create_outline</mat-icon>
-        </button>
-        <button color="warn" mat-icon-button (click)="onclickDelete(country)">
-          <mat-icon>delete_outline</mat-icon>
-        </button>
-         </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-</div>

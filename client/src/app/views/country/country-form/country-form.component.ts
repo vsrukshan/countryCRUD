@@ -16,7 +16,7 @@ export class CountryFormComponent implements OnInit {
       continent: new FormControl('', [Validators.required]),
       mainLanguage: new FormControl('', [Validators.required]),
       currencyCode: new FormControl('', [Validators.required]),
-      population: new FormControl('', [Validators.required, Validators.max(2147483647)]),
+      population: new FormControl('', [Validators.required, Validators.max(2147483647), Validators.pattern('^[0-9]*$')]),
 
     }
   );

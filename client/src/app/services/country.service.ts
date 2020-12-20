@@ -32,4 +32,8 @@ export class CountryService {
     return this.http.delete(`${this.rootUrl}/${id}`);
   }
 
+  getGeo(name: string): any {
+    return this.http.get(`https://api.mapbox.com/geocoding/v5/mapbox.places/${name}.json?types=country&access_token=pk.eyJ1IjoidnNydWtzaGFuIiwiYSI6ImNraXhnbzAwdTNlZzkzM3AzbTl2b2EwemcifQ.YaEW5LvrUuqy-himnmcCSQ`);
+  }
+
 }

@@ -1,6 +1,7 @@
 package com.vsrukshan.countryCRUD.entity;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Entity(name = "country")
 public class Country {
@@ -11,18 +12,23 @@ public class Country {
     private Integer id;
 
     @Column
+    @NotNull
     private String name;
 
     @Column
+    @NotNull
     private String continent;
 
     @Column
+    @NotNull
     private Long population;
 
     @Column
+    @NotNull
     private String mainLanguage;
 
     @Column
+    @NotNull
     private String currencyCode;
 
 
