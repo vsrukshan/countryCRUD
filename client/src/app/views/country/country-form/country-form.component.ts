@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import {FormControl, FormGroup, Validators} from '@angular/forms';
 import {CountryService} from '../../../services/country.service';
 import {Router} from '@angular/router';
-import * as _ from 'lodash';
 
 @Component({
   selector: 'app-country-form',
@@ -33,9 +32,11 @@ export class CountryFormComponent implements OnInit {
     this.countryForm.reset();
   }
 
-  createUpdateForm(country): void {
-    this.countryForm.setValue(_.omit(country, 'id'));
+  onCancel(): void {
+    this.countryForm.reset();
   }
+
+
 
   ngOnInit(): void {
   }
