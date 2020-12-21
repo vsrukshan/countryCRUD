@@ -25,7 +25,7 @@ export class CountryDetailComponent implements OnInit {
     this.id = this.route.snapshot.params.id;
     this.countryService.get(this.id).subscribe(res => {
       this.country = res;
-      this.countryName = res.name.replace(/\s/g, '');
+      this.countryName = res.name.replace(/\s/g, '%20');
       this.countryService.getGeo(this.countryName).subscribe((data) => {
         const code = data.features[0].center;
         this.longitude = code[0];
