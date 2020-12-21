@@ -12,6 +12,7 @@ import { CountryTableComponent } from './views/country/country-table/country-tab
 import { UpdateFormComponent } from './views/country/update-form/update-form.component';
 import { CountryDetailComponent } from './views/country/country-detail/country-detail.component';
 import {FlexLayoutModule} from '@angular/flex-layout';
+import { NotFoundComponent } from './views/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import {FlexLayoutModule} from '@angular/flex-layout';
     CountryFormComponent,
     CountryTableComponent,
     UpdateFormComponent,
-    CountryDetailComponent
+    CountryDetailComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,
