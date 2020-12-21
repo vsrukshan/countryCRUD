@@ -1,0 +1,41 @@
+.not-found {
+  font-size: 100px;
+  padding: 40px;
+  width: 100%;
+}
+
+#one {
+  padding: 40px;
+  margin: 40px auto;
+  display: block;
+  text-align: center;
+}
+
+#two {
+  margin: 40px;
+  display: block;
+  text-align: center;
+}
+
+a {
+  text-decoration: none;
+  color: #143db3;
+  font-size: xx-large;
+  text-align: center;
+  margin: 5% 42%;
+}
+
+/* Visited link    */
+a:visited {
+  color:#143db3;
+}
+
+/* Mouse over link */
+a:hover {
+  color: #143db3;
+}
+
+/* Selected link   */
+a:active {
+  color:#143db3;
+}
